@@ -7,7 +7,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.nellm.solustectonic.SolusTectonic;
 
 public class ModItems {
-    public static final DeferredRegister<Item> ITEMS =
+    public static final DeferredRegister.Items ITEMS =
             DeferredRegister.createItems(SolusTectonic.MODID);
 
     // Misc
