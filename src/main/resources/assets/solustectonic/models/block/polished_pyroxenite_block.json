@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "solustectonic:block/polished_pyroxenite_block"
+  }
+}

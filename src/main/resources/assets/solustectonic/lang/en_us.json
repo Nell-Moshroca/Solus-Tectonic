@@ -1,0 +1,32 @@
+{
+
+  "item.solustectonic.pearl": "Pearl",
+
+  "block.solustectonic.foidolite_block": "Foidolite",
+  "block.solustectonic.komatiite_block": "Komatiite",
+  "block.solustectonic.dunite_block": "Dunite",
+  "block.solustectonic.peridotite_block": "Peridotite",
+  "block.solustectonic.pyroxenite_block": "Pyroxenite",
+  "block.solustectonic.diabase_block": "Diabase",
+  "block.solustectonic.gabbro_block": "Gabbro",
+  "block.solustectonic.syenite_block": "Syenite",
+  "block.solustectonic.dacite_block": "Dacite",
+  "block.solustectonic.rhyolite_block": "Rhyolite",
+  "block.solustectonic.pegmatite_block": "Pegmatite",
+  "block.solustectonic.tephra_block": "Tephra",
+
+  "block.solustectonic.polished_foidolite_block": "Polished Foidolite",
+  "block.solustectonic.polished_komatiite_block": "Polished Komatiite",
+  "block.solustectonic.polished_dunite_block": "Polished Dunite",
+  "block.solustectonic.polished_peridotite_block": "Polished Peridotite",
+  "block.solustectonic.polished_pyroxenite_block": "Polished Pyroxenite",
+  "block.solustectonic.polished_diabase_block": "Polished Diabase",
+  "block.solustectonic.polished_gabbro_block": "Polished Gabbro",
+  "block.solustectonic.polished_syenite_block": "Polished Syenite",
+  "block.solustectonic.polished_dacite_block": "Polished Dacite",
+  "block.solustectonic.polished_rhyolite_block": "Polished Rhyolite",
+  "block.solustectonic.polished_pegmatite_block": "Polished Pegmatite",
+
+
+  "creativetab.solus_tab": "Solus Tectonic"
+}
