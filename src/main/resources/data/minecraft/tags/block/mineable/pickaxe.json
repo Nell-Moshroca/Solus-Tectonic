@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "solustectonic:dacite_block",
+    "solustectonic:diabase_block",
+    "solustectonic:dunite_block",
+    "solustectonic:foidolite_block",
+    "solustectonic:gabbro_block",
+    "solustectonic:komatiite_block",
+    "solustectonic:pegmatite_block",
+    "solustectonic:peridotite_block",
+    "solustectonic:pyroxenite_block",
+    "solustectonic:rhyolite_block",
+    "solustectonic:syenite_block",
+    "solustectonic:polished_dacite_block",
+    "solustectonic:polished_diabase_block",
+    "solustectonic:polished_dunite_block",
+    "solustectonic:polished_foidolite_block",
+    "solustectonic:polished_gabbro_block",
+    "solustectonic:polished_komatiite_block",
+    "solustectonic:polished_pegmatite_block",
+    "solustectonic:polished_peridotite_block",
+    "solustectonic:polished_pyroxenite_block",
+    "solustectonic:polished_rhyolite_block",
+    "solustectonic:polished_syenite_block"
+  ]
+}

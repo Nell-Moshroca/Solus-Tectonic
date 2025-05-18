@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "D": {
+      "item": "solustectonic:komatiite_block"
+    }
+  },
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "result": {
+    "count": 4,
+    "id": "solustectonic:polished_komatiite_block"
+  }
+}

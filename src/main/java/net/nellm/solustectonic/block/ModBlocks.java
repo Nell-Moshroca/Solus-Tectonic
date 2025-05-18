@@ -64,7 +64,7 @@ public class ModBlocks {
 
     public static final DeferredBlock<Block> TEPHRA_BLOCK = registerBlock("tephra_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.GRAVEL)));
+                    .strength(1f).sound(SoundType.GRAVEL)));
 
 
     public static final DeferredBlock<Block> POLISHED_FOIDOLITE_BLOCK = registerBlock("polished_foidolite_block",
