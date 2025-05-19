@@ -20,6 +20,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.solus_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.PEARL.get());
+                        output.accept(ModItems.IRON_PROSPECTING_PICK.get());
 
                         output.accept(ModBlocks.FOIDOLITE_BLOCK.get());
                         output.accept(ModBlocks.POLISHED_FOIDOLITE_BLOCK.get());
