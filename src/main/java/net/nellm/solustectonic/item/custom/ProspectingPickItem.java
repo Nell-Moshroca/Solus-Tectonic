@@ -1,13 +1,21 @@
 package net.nellm.solustectonic.item.custom;
 
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+
+import javax.naming.Context;
 
 public class ProspectingPickItem extends Item {
     public ProspectingPickItem(Properties properties) {
@@ -16,13 +24,14 @@ public class ProspectingPickItem extends Item {
 
     @Override
     public InteractionResult useOn(UseOnContext context) {
-        if (!pContext.getLevel().isClientSide()) {
-            BlockPos positionClicked = pContext.getClickedPos();
-            Player player = pContext.getPlayer();
+        if (!context.getLevel().isClientSide()) {
+            BlockPos positionClicked = context.getClickedPos();
+            Level level = context.getLevel();
+            Player player = context.getPlayer();
             boolean foundBlock = false;
 
             for (int i = 0; i <= positionClicked.getY() + 64; i++) {
-                BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
+                BlockState state = context.getLevel().getBlockState(positionClicked.below(i));
 
                 if (isValuableBlock(state)) {
                     outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
@@ -30,6 +39,12 @@ public class ProspectingPickItem extends Item {
 
                     break;
                 }
+
+                context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
+
+                //context.getItemInHand().hurtAndBreak(1,((ServerLevel) level), context.getPlayer(),
+                      //  item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+                //itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
             }
 
             if(!foundBlock) {
@@ -37,17 +52,18 @@ public class ProspectingPickItem extends Item {
             }
         }
 
-        pContext.getItemInHand().hurtAndBreak(1,pContext.getPlayer(),
-                player -> player.broadcastBreakEvent(player.getUsedItemHand()));
+
 
         return InteractionResult.SUCCESS;
     }
 
     private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Found traces of " + I18n.get(block.getDescription())));
+        player.sendSystemMessage(Component.literal("Found traces of ").append(Component.translatable(block.getDescriptionId())).append(Component.literal(".")));
+        //player.sendSystemMessage(Component.literal("Found traces of " + I18n.get(Component.translatable() + ".")));
+        //Component.literal("Found traces of ").append(Component.translatable(block.getDescriptionId())
     }
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.GOLD_ORE) || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.COAL_ORE)
+        return state.is(Blocks.IRON_ORE) || state.is(Blocks.GOLD_ORE) || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.COAL_ORE);
     }
 }
