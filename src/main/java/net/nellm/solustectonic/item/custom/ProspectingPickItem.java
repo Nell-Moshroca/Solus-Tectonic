@@ -40,16 +40,14 @@ public class ProspectingPickItem extends Item {
                     break;
                 }
 
-                context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
-
-                //context.getItemInHand().hurtAndBreak(1,((ServerLevel) level), context.getPlayer(),
-                      //  item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
-                //itemstack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
+                //context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
             }
 
             if(!foundBlock) {
                 player.sendSystemMessage(Component.literal("No ore detected."));
             }
+
+            context.getItemInHand().hurtAndBreak(1, player, LivingEntity.getSlotForHand(context.getHand()));
         }
 
 
@@ -64,6 +62,9 @@ public class ProspectingPickItem extends Item {
     }
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.GOLD_ORE) || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.COAL_ORE);
+        return state.is(Blocks.IRON_ORE) || state.is(Blocks.GOLD_ORE) || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DIAMOND_ORE) || state.is(Blocks.COAL_ORE)
+                || state.is(Blocks.REDSTONE_ORE) || state.is(Blocks.EMERALD_ORE) || state.is(Blocks.LAPIS_ORE) || state.is(Blocks.RAW_COPPER_BLOCK)
+                || state.is(Blocks.RAW_GOLD_BLOCK) || state.is(Blocks.RAW_IRON_BLOCK) || state.is(Blocks.DEEPSLATE_IRON_ORE) || state.is(Blocks.DEEPSLATE_GOLD_ORE) || state.is(Blocks.DEEPSLATE_COPPER_ORE) || state.is(Blocks.DEEPSLATE_DIAMOND_ORE) || state.is(Blocks.DEEPSLATE_COAL_ORE)
+                || state.is(Blocks.DEEPSLATE_REDSTONE_ORE) || state.is(Blocks.DEEPSLATE_EMERALD_ORE) || state.is(Blocks.DEEPSLATE_LAPIS_ORE) ;
     }
 }
